@@ -28,7 +28,15 @@ function printDefaultInfo(i) {
     form[0].innerHTML = '<br>';
     form[0].innerHTML += `<div class="deatailedInfo">
         <div class="details">
-            <div class="elem">Имя</div>
+        <div class="text_name strong">Тип -- ${arrBandits[i].TypeOf}</div>
+        <div class="text_name strong">Имя -- ${arrBandits[i].FirstName}</div>
+        <div class="text_name strong">Фамилия -- ${arrBandits[i].LastName}</div>
+        <div class="text_name strong">Возраст -- ${arrBandits[i].old}</div>
+        <div class="text_name strong">Дети -- ${arrBandits[i].children}</div>
+        <div class="text_name strong">Опыт -- ${arrBandits[i].experience}</div>
+        <div class="text_name strong">Организация -- ${arrBandits[i].Organization}</div>
+        <div class="text_name strong">Дата устройства -- ${arrBandits[i].When}</div>
+        
         </div>
         </div>
         <input type="button" class="buttons" id="mainMenu2" value="Главное меню">`;
@@ -56,32 +64,20 @@ function printInfo(arrBandits) {
     form[0].innerHTML = '<br>';
     //Первая (верхняя) строка таблицы
     form[0].innerHTML += `<div class="text_descriptions>"
-        <div class="text_name strong"> Тип ? </div>
-        <div class="text_name strong"> Имя </div>
-        <div class="text_name strong"> Фамилия </div>
-        <div class="text_name strong"> Возраст </div>
-        <div class="text_name strong"> Дети </div>
-        <div class="text_name strong"> Должность </div>
-        <div class="text_name strong"> Опыт работы </div>
-        <div class="text_name strong"> Организация </div>
-        <div class="text_name strong"> Дата поступления </div>
-        
+    <div class="elem strong"> Фамилия</div>
+    <div class="elem strong"> Имя</div>
+    <div class="elem strong"> Должность</div>
         </div>`;
     for (let i = 0; i < arrBandits.length; i++) {
         // каждое i - информация о персоне
         form[0].innerHTML += `<div class="text_description">
-        <div class="text_name"> ${arrBandits[i].TypeOf}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].FirstName }</div>
-        <div class="text_name"> ${arrBandits[i].LastName }</div>
-        <div class="text_name"> ${arrBandits[i].old }</div>
-        <div class="text_name"> ${arrBandits[i].children }</div>
-        <div class="text_name"> ${arrBandits[i].position }</div>
-        <div class="text_name"> ${arrBandits[i].experience }</div>
-        <div class="text_name"> ${arrBandits[i].When }</div>
-        <div class="text_name"> ${arrBandits[i].Organization }</div>
-        <div class="text_name" id="edit${i}">Редактировать</div>
-        <div class="text_name" id="remove${i}">Удалить</div>
-        </div>`
+        <hr>
+        <div class="elem strong"> ${arrBandits[i].LastName}</div>
+        <div class="elem strong" id="details${i}">${arrBandits[i].FirstName}</div>
+        <div class="elem strong">${arrBandits[i].position}</div><hr>
+        <div class="elem" id="edit${i}">Редактировать</div>
+        <div class="elem" id="remove${i}">Удалить</div>
+       </div>`
     }
     form[0].innerHTML += '<br>' +
         '<input type="button" id="newBanditButton" class="buttons" value="Добавить нового бандита">';
@@ -93,6 +89,7 @@ function printInfo(arrBandits) {
         let remove = `remove${i}`;
         let details = `details${i}`;
         document.getElementById(edit).style.color = 'blue';
+        document.getElementById(edit).style.fontSize = '20px';
         document.getElementById(remove).style.color = 'red';
         document.getElementById(details).style.color = 'green';
         document.getElementById(details).style.fontSize = '30px';
@@ -146,7 +143,7 @@ function display(visibleId) {
 // родительский класс с геттером и сеттером
 
 class BaseClass {
-    constructor(TypeOf, FirstName,LastName, old, children, position, experience, When, Organization) {      
+    constructor(TypeOf, FirstName, LastName, old, children, position, experience, When, Organization) {
         this.TypeOf = TypeOf;
         this.FirstName = FirstName;
         this.LastName = LastName;
@@ -166,17 +163,17 @@ class BaseClass {
     set TypeOf(value) {
         if (value.length == '') {
             alert('Введите Ваше Имя');
-        } else{
+        } else {
             this._TypeOf = value
         }
     }
     get LastName() {
         return this._LastName;
     }
-    set LastName(value){
-        if (value.length == ''){
+    set LastName(value) {
+        if (value.length == '') {
             alert('Введите Вашу Фамилию')
-        } else{
+        } else {
             this._LastName = value
         }
     }
@@ -188,7 +185,7 @@ class BaseClass {
     set old(value) {
         if (value.length == '') {
             alert('Введите Ваш возраст');
-        } else{
+        } else {
             this._old = value
         }
     }
@@ -200,7 +197,7 @@ class BaseClass {
     set children(value) {
         if (value.length == '') {
             alert('Введите Ваше Имя');
-        } else{
+        } else {
             this._children = value
         }
     }
@@ -212,7 +209,7 @@ class BaseClass {
     set experience(value) {
         if (value.length == '') {
             alert('Введите Ваше Имя');
-        } else{
+        } else {
             this._experience = value
         }
     }
@@ -224,7 +221,7 @@ class BaseClass {
     set When(value) {
         if (value.length == '') {
             alert('Введите Ваше Имя');
-        } else{
+        } else {
             this._When = value
         }
     }
@@ -236,11 +233,11 @@ class BaseClass {
     set Organization(value) {
         if (value.length == '') {
             alert('Введите Ваше Имя');
-        } else{
+        } else {
             this._Organization = value
         }
     }
-    
+
 }
 
 // классы наследники
