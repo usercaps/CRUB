@@ -1,0 +1,24 @@
+span{
+    margin-right: 100px;
+}
+
+#create_person{
+    flex-direction: column;
+}
+#create_person span{
+    margin-right: 10px;
+}
+#create_person input{
+    margin: 0 auto;
+}
+#createPerson{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: brown;
+}
+#old{
+    width: 35px;
+}
+#experience{
+    width: 35px;
+}

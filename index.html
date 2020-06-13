@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>CRUD ES6</title>
+</head>
+<body>
+
+    <div id="information" style="display: flex;">
+        <form>
+           <!--  <div class="text_decoration">
+                <div class="text_name strong"> Имя </div>
+            </div> -->
+        </form>
+    </div>
+
+    <div id="all_info" style="display: none;">
+        <h2>Подробная информация</h2>
+        <form>
+          <!--   <div class="detailInfo">
+                <div class="details">
+                    <div class="elem">Имя</div>
+                </div>
+            </div>
+            <input type="button" class="buttons" id="mainMenu2" value="Главное меню"> -->
+        </form>
+    </div>
+
+    <div id="create_person" style="display: none;">
+        <h2>Выбор Информации</h2>
+        <form>
+            <!-- <div class="radio_btn">
+                <div><input type="radio" id="radio_ext1" name="radioOneExt" value="killer">Киллер</div>
+                <div><input type="radio" id="radio_ext2" name="radioTwoExt" value="sniper">Снайпер</div>
+            </div> -->
+            <span>Тип записи</span><select id="TypeOf">
+                <option>-</option>
+                <option>я</option>
+                <option>не</option>
+                <option>знаю</option>
+                <option>что</option>
+                <option>это</option>
+                <option>такое</option>
+            </select><br>
+            <span>Имя</span><input type="text" id="FirstName" placeholder="John"  required><br>
+            <span>Фамилия</span><input type="text" id="LastName" placeholder="Wick" required><br>
+            <!-- <span>Отчество</span><input type="text" id="textFirstName" value="John" required><br>  -->
+            <!--какой убийца с отчеством)-->
+            <span>Возраст</span><input type="number" id=old placeholder="30" required><br>
+            <span>Дети</span><input type="checkbox" id="children"><br>
+            <span>Должность</span><select id="position">
+                <option>-</option>
+                <option>Assasin</option>
+                <option>Sniper</option>
+                <option >junior</option>
+                <option>middle</option>
+                <option>senior</option>
+            </select><br>
+            <span>Стаж</span><input type="text" id=experience placeholder="30" required><br>
+            <span>Дата принятия на работу</span><input type="text" id="When" placeholder="when you start work" required><br>
+            <span>Организация</span><select id="Organization">
+                <option>-</option>
+                <option>Assasins Academy</option>
+                <option>Elit Snipers</option>
+                <option>ORmedia</option>
+                <option>BNTU</option>
+                <option>Sniper Academy</option>
+            </select><br>
+            <input type="button" id="createPerson" class="buttons" value="Добавить нового в подразделение">
+            <input type="button" id="mainMenu" class="buttons" value="Главная страница">
+        </form>
+    </div> 
+
+    <script src="./script.js"></script>
+</body>
+</html>
