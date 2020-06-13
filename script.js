@@ -38,27 +38,47 @@ function printDefaultInfo(i) {
     });
 }
 
+// function openDiv(){
+//     var buttonOpen = document.getElementsByClassName('show');
+//     for(let button of buttonOpen){
+//       button.addEventListener('click', function(){
+//           button.parentElement.querySelector('.dop-info').classList.toggle('close');
+//           event.preventDefault();
+//       })
+//     }
+//   }
+
+
 //отрисовка всей информации о персонах
 
 function printInfo(arrBandits) {
     let form = document.getElementById('information').getElementsByTagName('form');
     form[0].innerHTML = '<br>';
     //Первая (верхняя) строка таблицы
-    form[0].innerHTML += `<div class="text_description>"
+    form[0].innerHTML += `<div class="text_descriptions>"
+        <div class="text_name strong"> Тип ? </div>
         <div class="text_name strong"> Имя </div>
+        <div class="text_name strong"> Фамилия </div>
+        <div class="text_name strong"> Возраст </div>
+        <div class="text_name strong"> Дети </div>
+        <div class="text_name strong"> Должность </div>
+        <div class="text_name strong"> Опыт работы </div>
+        <div class="text_name strong"> Организация </div>
+        <div class="text_name strong"> Дата поступления </div>
+        
         </div>`;
     for (let i = 0; i < arrBandits.length; i++) {
         // каждое i - информация о персоне
         form[0].innerHTML += `<div class="text_description">
-        <div class="text_name" id="details${i}"> ${arrBandits[i].TypeOf}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].FirstName}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].LastName}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].old}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].children}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].position}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].experience}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].When}</div>
-        <div class="text_name" id="details${i}"> ${arrBandits[i].Organization}</div>
+        <div class="text_name"> ${arrBandits[i].TypeOf}</div>
+        <div class="text_name" id="details${i}"> ${arrBandits[i].FirstName }</div>
+        <div class="text_name"> ${arrBandits[i].LastName }</div>
+        <div class="text_name"> ${arrBandits[i].old }</div>
+        <div class="text_name"> ${arrBandits[i].children }</div>
+        <div class="text_name"> ${arrBandits[i].position }</div>
+        <div class="text_name"> ${arrBandits[i].experience }</div>
+        <div class="text_name"> ${arrBandits[i].When }</div>
+        <div class="text_name"> ${arrBandits[i].Organization }</div>
         <div class="text_name" id="edit${i}">Редактировать</div>
         <div class="text_name" id="remove${i}">Удалить</div>
         </div>`
@@ -75,6 +95,7 @@ function printInfo(arrBandits) {
         document.getElementById(edit).style.color = 'blue';
         document.getElementById(remove).style.color = 'red';
         document.getElementById(details).style.color = 'green';
+        document.getElementById(details).style.fontSize = '30px';
 
         document.getElementById(details).addEventListener('click', function () {
             printDefaultInfo(i, arrBandits);
@@ -125,12 +146,13 @@ function display(visibleId) {
 // родительский класс с геттером и сеттером
 
 class BaseClass {
-    constructor(TypeOf, FirstName,LastName, old, children, experience, When, Organization) {      
+    constructor(TypeOf, FirstName,LastName, old, children, position, experience, When, Organization) {      
         this.TypeOf = TypeOf;
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.old = old;
         this.children = children;
+        this.position = position;
         this.experience = experience;
         this.When = When;
         this.Organization = Organization;

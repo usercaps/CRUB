@@ -22,3 +22,10 @@ span{
 #experience{
     width: 35px;
 }
+.text_description{
+    display: flex;
+    flex-direction: column;
+}
+form[0]{
+    display: flex;
+}
